@@ -1,0 +1,53 @@
+# Archivos generados por PHPStorm
+.idea/
+*.iml
+
+# Dependencias de Composer
+/vendor/
+composer.lock
+
+# Entorno de PHP dotenv
+.env
+.env.local
+.env.*.local
+
+# Caché y logs de PHP
+*.log
+*.cache
+*.session
+*.pid
+*.seed
+*.log.*
+
+# Archivos de caché de Symfony/Laravel u otros frameworks
+bootstrap/cache/
+storage/logs/
+storage/framework/cache/
+storage/framework/views/
+storage/framework/sessions/
+
+# Configuración específica del sistema
+.DS_Store
+Thumbs.db
+
+# Caché de PHPUnit
+.phpunit.result.cache
+
+# Archivos temporales
+/tmp/
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos de bases de datos SQLite
+*.sqlite
+*.sqlite3
+
+# Subidas de usuarios (si las hay)
+public/uploads/
+storage/app/public/
+
+# Archivos de despliegue
+/.env.production
+/.env.testing
+/deployment/

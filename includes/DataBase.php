@@ -2,20 +2,26 @@
 namespace DB;
 use PDO;
 use PDOException;
+use Dotenv\Dotenv;
 
 class Database {
-    private $host = "localhost";
-    private $dbname = "tisoar";
-    private $username = "root";
-    private $password = "";
-    private $port = "3306";
-    private $charset = "utf8";
     private $pdo;
-
     public function __construct() {
-        $dsn = "mysql:host={$this->host};port={$this->port};dbname={$this->dbname};charset={$this->charset}";
+        $dotenv = Dotenv::createImmutable(__DIR__ . '../../');
+        //debuguear($dotenv);
+
+        $dotenv->load();
+
+        $host = $_ENV['DB_HOST'];
+        $dbname = $_ENV['DB_NAME'];
+        $username = $_ENV['DB_USER'];
+        $password = $_ENV['DB_PASS'];
+        $port = $_ENV['DB_PORT'];
+        $charset = "utf8";
+
+        $dsn = "mysql:host={$host};port={$port};dbname={$dbname};charset={$charset}";
         try {
-            $this->pdo = new PDO($dsn, $this->username, $this->password, [
+            $this->pdo = new PDO($dsn, $username, $password, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
                 PDO::ATTR_EMULATE_PREPARES => false
