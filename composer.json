@@ -1,0 +1,23 @@
+{
+  "name": "victorcorea/api-tisoar",
+  "description": "API para el proyecto de programacion Movil",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "MVC\\": "./",
+      "Controllers\\": "./Controllers/",
+      "Models\\": "./Models",
+      "DB\\": "./includes",
+      "DTO\\": "./Models/DTO"
+    }
+  },
+  "authors": [
+    {
+      "name": "Victor Corea",
+      "email": "vico19912@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-pdo": "*"
+  }
+}
